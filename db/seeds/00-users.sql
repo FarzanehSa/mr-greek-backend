@@ -1,4 +1,6 @@
 -- user table
 
-INSERT INTO USERS (email, tel, firstname, lastname, password, access)
-  VALUES ('admin', '1111111111', 'Admin', '', '$2a$10$6B8zRf9D8hb3Yr2LdF9hbOnEdNThBggcKzR9tn16R2SqoVD4BRhLm', 0);
+INSERT INTO USERS (username, password, access)
+  VALUES ('admin', '$2a$10$Kop5i87KbGDCgUCieODfYeBD8GOrc9s3.MeW.SYDZk7aMV2va4EwW', 0);
+INSERT INTO USERS (username, password, access)
+  VALUES ('test', '$2a$10$Kop5i87KbGDCgUCieODfYeBD8GOrc9s3.MeW.SYDZk7aMV2va4EwW', 1);
