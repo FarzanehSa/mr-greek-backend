@@ -1,88 +1,93 @@
 const express = require('express');
 const router  = express.Router();
 
-// const {getAllTimes} = require('../db/queries/00_getAllTimes');
-// const {getServiceGroups} = require('../db/queries/03_getServiceGroups');
-// const {getServices} = require('../db/queries/04_getServices');
-// const {addServiceGroup} = require('../db/queries/dashboard/serviceGroup/01_addServiceGroup');
-// const {deleteServiceGroup} = require('../db/queries/dashboard/serviceGroup/02_deleteServiceGroup');
-// const {updateServiceGroup} = require('../db/queries/dashboard/serviceGroup/03_updateServiceGroup');
+const {getMenuGroups} = require('../db/queries/02_getMenuGroups');
+const {addMenuGroup} = require('../db/queries/03_addMenuGroup');
+const {updateMenuGroup} = require('../db/queries/04_updateMenuGroup');
+const {deleteMenuGroup} = require('../db/queries/05_deleteMenuGroup');
 
-// router.get('/', (req, res) => {
+router.get('/', (req, res) => {
 
-//   const f1 = getServiceGroups();
-//   const f2 = getServices();
-//   const f3 = getAllTimes();
+  const f1 = getMenuGroups();
 
-//   Promise.all([f1, f2, f3])
-//   .then(([groups, services, timeTable]) => {
-//     res.json({ groups, services, timeTable});
-//     return;
-//   })
-//   .catch(err => {
-//     res
-//     .status(500)
-//     .json({ error: err.message });
-//   });;
-// });
+  Promise.all([f1])
+  .then(([groups]) => {
+    res.json({ groups });
+    return;
+  })
+  .catch(err => {
+    res
+    .status(500)
+    .json({ error: err.message });
+  });;
+});
 
-// router.delete("/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
 
-//   const id = req.params.id;
+  const id = req.params.id;
 
-//   deleteServiceGroup(id)
-//   .then(deleted => {
+  deleteMenuGroup(id)
+  .then(deleted => {
 
-//     res.json({ deleted });
-//     return;
+    res.json({ deleted });
+    return;
 
-//   })
-//   .catch(err => {
-//     console.log(err.message);
-//     res
-//     .status(500)
-//     .json({ error: err.message });
-//   });
-// });
+  })
+  .catch(err => {
+    console.log(err.message);
+    res
+    .status(500)
+    .json({ error: err.message });
+  });
+});
 
-// router.put("/", (req, res) => {
+router.put("/", (req, res) => {
 
-//   const {id, serviceGroup} = req.body.group;
+  const {id, name} = req.body.group;
 
-//   updateServiceGroup(id, serviceGroup.trim())
-//   .then(updated => {
-//     res.json({ updated });
-//     return;
-//   })
-//   .catch(err => {
-//     console.log(err.message);
-//     res
-//     .status(500)
-//     .json({ error: err.message });
-//   });
-// });
+  updateMenuGroup(id, name.trim().split("").map(
+    (x, i) => {
+      if (i === 0) return (x.toUpperCase());
+      else return (x.toLowerCase());
+    }
+  ).join(""))
+  .then(updated => {
+    res.json({ updated });
+    return;
+  })
+  .catch(err => {
+    console.log(err.message);
+    res
+    .status(500)
+    .json({ error: err.message });
+  });
+});
 
 
 // Add new menu-group
 router.post("/", (req, res) => {
 
-  console.log(req.body);
-  const serviceGroup = req.body.group.menuGroup.trim();
+  let menuGroup = req.body.group.name.trim().split("").map(
+    (x, i) => {
+      if (i === 0) return (x.toUpperCase());
+      else return (x.toLowerCase());
+    }
+  ).join("");
 
-//   addServiceGroup(serviceGroup)
-//   .then(newGroup => {
-//     getServiceGroups()
-//     .then(updateGroups => {
-//       res.json({ updateGroups });
-//       return;
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err.message);
-//     res
-//     .status(500)
-//     .json({ error: err.message });
-//   });
+  addMenuGroup(menuGroup)
+  .then(newGroup => {
+    getMenuGroups()
+    .then(updateGroups => {
+      res.json({ updateGroups });
+      return;
+    })
+  })
+  .catch(err => {
+    console.log(err.message);
+    res
+    .status(500)
+    .json({ error: err.message });
+  });
 });
 
 module.exports = router;

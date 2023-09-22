@@ -41,14 +41,11 @@ app.use(
 app.use(express.static('public'));
 
 // Separated Routes for each Resource
-const router = require('./routes/router');
 const loginRoutes = require('./routes/login');
 const menuGroupsRoutes = require('./routes/menu-groups');
 
-app.use('/', router);
 app.use('/api/login', loginRoutes);
 app.use('/api/menu-groups', menuGroupsRoutes);
-
 
 const server = app.listen(Port, () => {
   console.log(`Server is running on port ${Port}`);
