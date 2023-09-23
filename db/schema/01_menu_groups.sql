@@ -1,4 +1,4 @@
--- Drop and recreate service_groups table
+-- Drop and recreate menu_groups table
 
 DROP TABLE IF EXISTS menu_groups CASCADE;
 CREATE TABLE menu_groups (
