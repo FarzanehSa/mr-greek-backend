@@ -1,18 +1,18 @@
 const express = require('express');
 const router  = express.Router();
 
-const {getMenuGroups} = require('../db/queries/02_getMenuGroups');
-const {addMenuGroup} = require('../db/queries/03_addMenuGroup');
-const {updateMenuGroup} = require('../db/queries/04_updateMenuGroup');
-const {deleteMenuGroup} = require('../db/queries/05_deleteMenuGroup');
+const {getMenuItems} = require('../db/queries/06_getMenuItems');
+const {addMenuItem} = require('../db/queries/07_addMenItem');
+const { updateMenuItem } = require('../db/queries/08_updateMenuItem');
+const { deleteMenuItem } = require('../db/queries/09-deleteMenuItem');
 
 router.get('/', (req, res) => {
 
-  const f1 = getMenuGroups();
+  const f1 = getMenuItems();
 
   Promise.all([f1])
-  .then(([groups]) => {
-    res.json({ groups });
+  .then(([items]) => {
+    res.json({ items });
     return;
   })
   .catch(err => {
@@ -26,7 +26,7 @@ router.delete("/:id", (req, res) => {
 
   const id = req.params.id;
 
-  deleteMenuGroup(id)
+  deleteMenuItem(id)
   .then(deleted => {
 
     res.json({ deleted });
@@ -43,17 +43,21 @@ router.delete("/:id", (req, res) => {
 
 router.put("/", (req, res) => {
 
-  const {id, group} = req.body.group;
-
-  updateMenuGroup(id, group.trim().split("").map(
+  const {id, groupId, price, description} = req.body;
+  const item = req.body.item.trim().split("").map(
     (x, i) => {
       if (i === 0) return (x.toUpperCase());
       else return (x.toLowerCase());
     }
-  ).join(""))
+  ).join("");
+
+  updateMenuItem(id, item, groupId, Math.trunc(price * 100), description)
   .then(updated => {
-    res.json({ updated });
-    return;
+    getMenuItems()
+    .then(data => {
+      res.json({ newMenuItems: data });
+      return;
+    })
   })
   .catch(err => {
     console.log(err.message);
@@ -64,21 +68,22 @@ router.put("/", (req, res) => {
 });
 
 
-// Add new menu-group
+// Add new menu-item
 router.post("/", (req, res) => {
 
-  let menuGroup = req.body.group.group.trim().split("").map(
+  const {groupId, price, description} = req.body;
+  const item = req.body.item.trim().split("").map(
     (x, i) => {
       if (i === 0) return (x.toUpperCase());
       else return (x.toLowerCase());
     }
   ).join("");
 
-  addMenuGroup(menuGroup)
-  .then(newGroup => {
-    getMenuGroups()
-    .then(updateGroups => {
-      res.json({ updateGroups });
+  addMenuItem(groupId, item, Math.trunc(price * 100), description)
+  .then(newMenuItem => {
+    getMenuItems()
+    .then(data => {
+      res.json({ newMenuItems: data });
       return;
     })
   })

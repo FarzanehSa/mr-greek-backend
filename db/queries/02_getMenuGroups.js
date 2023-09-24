@@ -2,7 +2,7 @@ const db = require('../connection');
 
 const getMenuGroups = () => {
   return db.query(`
-    SELECT * FROM menu_groups
+    SELECT id, name as group, active FROM menu_groups
     WHERE menu_groups.active = true
     ORDER BY menu_groups.id;`
   )
