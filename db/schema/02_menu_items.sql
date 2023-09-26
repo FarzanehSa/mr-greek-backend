@@ -7,7 +7,7 @@ CREATE TABLE menu_items (
 
   name VARCHAR(255) NOT NULL,
   price INTEGER NOT NULL,
-  image VARCHAR(512),
+  image VARCHAR(512) NOT NULL,
   description TEXT,
   active BOOLEAN NOT NULL DEFAULT true
 );

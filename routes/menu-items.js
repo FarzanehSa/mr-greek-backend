@@ -43,7 +43,9 @@ router.delete("/:id", (req, res) => {
 
 router.put("/", (req, res) => {
 
-  const {id, groupId, price, description} = req.body;
+  const noImg = 'https://res.cloudinary.com/demoshoebox/image/upload/v1695702421/Mr.Greek/important/no-image_byi9g0.jpg';
+  const {id, groupId, price, description, image} = req.body;
+
   const item = req.body.item.trim().split("").map(
     (x, i) => {
       if (i === 0) return (x.toUpperCase());
@@ -51,7 +53,7 @@ router.put("/", (req, res) => {
     }
   ).join("");
 
-  updateMenuItem(id, item, groupId, Math.trunc(price * 100), description)
+  updateMenuItem(id, item, groupId, Math.trunc(price * 100), description, image || noImg)
   .then(updated => {
     getMenuItems()
     .then(data => {
@@ -71,7 +73,8 @@ router.put("/", (req, res) => {
 // Add new menu-item
 router.post("/", (req, res) => {
 
-  const {groupId, price, description} = req.body;
+  const noImg = 'https://res.cloudinary.com/demoshoebox/image/upload/v1695702421/Mr.Greek/important/no-image_byi9g0.jpg';
+  const {groupId, price, description, image} = req.body;
   const item = req.body.item.trim().split("").map(
     (x, i) => {
       if (i === 0) return (x.toUpperCase());
@@ -79,7 +82,7 @@ router.post("/", (req, res) => {
     }
   ).join("");
 
-  addMenuItem(groupId, item, Math.trunc(price * 100), description)
+  addMenuItem(groupId, item, Math.trunc(price * 100), description, image || noImg)
   .then(newMenuItem => {
     getMenuItems()
     .then(data => {
