@@ -1,18 +1,14 @@
 -- menu_groups table
 
 INSERT INTO menu_groups (name)
-  VALUES ('Wraps');
+  VALUES ('Donairs');
 INSERT INTO menu_groups (name)
-  VALUES ('Platters');
+  VALUES ('Plates');
 INSERT INTO menu_groups (name)
-  VALUES ('Poutine');
-INSERT INTO menu_groups (name)
-  VALUES ('Donair meat & fries');
+  VALUES ('Salads');
 INSERT INTO menu_groups (name)
   VALUES ('Sides');
 INSERT INTO menu_groups (name)
   VALUES ('Desserts');
-INSERT INTO menu_groups (name)
-  VALUES ('Sauces');
 
 
