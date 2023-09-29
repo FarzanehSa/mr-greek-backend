@@ -26,9 +26,30 @@ INSERT INTO menu_items (menu_group_id, name, price, image, description)
 INSERT INTO menu_items (menu_group_id, name, price, image, description)
   VALUES (3, 'Beef Salad Plate', 1200, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695753284/Mr.Greek/important/Beef_Salad_Plate_stfqyr.webp', 'Freshly shaved beef with fresh greek salad on a plate.');
 INSERT INTO menu_items (menu_group_id, name, price, image, description)
-  VALUES (3, 'Lamb Salad Plate', 1200, '', 'Freshly shaved lamb donair meat with fresh greek salad on a plate.');
+  VALUES (3, 'Lamb Salad Plate', 1200, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695959387/Mr.Greek/important/Lamb_Salad_Plate_ks0fs3.webp', 'Freshly shaved lamb donair meat with fresh greek salad on a plate.');
 INSERT INTO menu_items (menu_group_id, name, price, image, description)
-  VALUES (3, 'Falafel Salad Plate', 1200, '', 'Freshly fried 5 falafel balls with fresh greek salad on a plate.');
+  VALUES (3, 'Falafel Salad Plate', 1200, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695846034/Mr.Greek/important/Falafel_Plate_aiei6t.webp', 'Freshly fried 5 falafel balls with fresh greek salad on a plate.');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (3, 'Shirazi Salad', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/Shirazi_Salad_undha6.jpg', '');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (3, 'Greek Salad', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958651/Mr.Greek/important/Greek_Salad_gsjqku.jpg', '');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (3, 'Pasta Salad', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/Pasta_Salad_b4rodr.jpg', '');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (3, 'Tabouli Salad', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/Tabouli_Salad_npz4w7.jpg', '');
 
 -- group 4 - Sides
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (4, 'French Fries', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/French_Fries_ajxais.jpg', 'Thinly sliced potatoes are perfectly fried in hot oil.');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (4, 'Vine Leaves', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/Vine_Leaves_vxch2b.jpg', 'An glamorous flavor of Mediterranean cuisine, that is carefully prepared with fresh vine leaves, full and aromatic filling.');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (4, 'Hummus', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695959070/Mr.Greek/important/Hummus.jpg', 'Hummus, a unique taste of the Mediterranean, pampers your palate with its unique taste.');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (4, 'Samosa', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/Samosa_invbuy.webp', '');
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (4, 'Spinach Pie', 800, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695959606/Mr.Greek/important/Spinach_Pie_krblka.jpg', '');
+
 -- group 5 - Desserts
+INSERT INTO menu_items (menu_group_id, name, price, image, description)
+  VALUES (5, 'Baklava', 500, 'https://res.cloudinary.com/demoshoebox/image/upload/v1695958650/Mr.Greek/important/Baklava_xsdqmw.jpg', 'A delicious and glamorous dessert experience that will pamper your palate; Baklava! The world-famous flavor awaits you with its rich aroma, crispy layers and delicious filling.');
