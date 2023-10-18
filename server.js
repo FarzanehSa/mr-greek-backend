@@ -45,11 +45,13 @@ const loginRoutes = require('./routes/login');
 const menuGroupsRoutes = require('./routes/menu-groups');
 const menuItemsRoutes = require('./routes/menu-items');
 const featuresRoutes = require('./routes/features');
+const storeSettingsRoutes = require('./routes/store-settings');
 
 app.use('/api/login', loginRoutes);
 app.use('/api/menu-groups', menuGroupsRoutes);
 app.use('/api/menu-items', menuItemsRoutes);
 app.use('/api/features', featuresRoutes);
+app.use('/api/store-settings', storeSettingsRoutes);
 
 const server = app.listen(Port, () => {
   console.log(`Server is running on port ${Port}`);
