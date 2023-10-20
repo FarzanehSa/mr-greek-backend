@@ -1,6 +1,6 @@
 const db = require('../connection');
 
-const getStoreSettings = (id) => {
+const getStoreInfo = (id) => {
   return db.query(`
     SELECT name as storename, tel, logo, address FROM store_settings
     WHERE id = $1;`, [id]
@@ -10,4 +10,4 @@ const getStoreSettings = (id) => {
     });
 }
 
-module.exports = { getStoreSettings };
+module.exports = { getStoreInfo };
