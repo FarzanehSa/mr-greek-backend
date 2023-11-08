@@ -1,8 +1,8 @@
 -- features table
 
 INSERT INTO features (name, image)
-  VALUES ('Halal','https://res.cloudinary.com/demoshoebox/image/upload/v1696118071/Mr.Greek/important/halal_lyefcd.jpg');
+  VALUES ('Halal','https://res.cloudinary.com/demoshoebox/image/upload/v1698538785/Mr.Greek/important/halal_icon.jpg');
 INSERT INTO features (name, image)
-  VALUES ('Vegeterian','https://res.cloudinary.com/demoshoebox/image/upload/v1696397649/Mr.Greek/important/vegetarian_vcjzxg.jpg');
+  VALUES ('Vegeterian','https://res.cloudinary.com/demoshoebox/image/upload/v1698538779/Mr.Greek/important/vegetarian_icon.jpg');
 INSERT INTO features (name, image)
-  VALUES ('Vegan','https://res.cloudinary.com/demoshoebox/image/upload/v1696118078/Mr.Greek/important/vegan_fcy8ir.png');
+  VALUES ('Vegan','https://res.cloudinary.com/demoshoebox/image/upload/v1698538790/Mr.Greek/important/vegan_icon.jpg');

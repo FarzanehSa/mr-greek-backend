@@ -46,7 +46,7 @@ router.delete("/:id", (req, res) => {
 
 router.put("/", async(req, res) => {
 
-  const noImg = 'https://res.cloudinary.com/demoshoebox/image/upload/v1695702421/Mr.Greek/important/no-image_byi9g0.jpg';
+  const noImg = 'https://res.cloudinary.com/demoshoebox/image/upload/v1695702421/Mr.Greek/important/no-image.jpg';
   const {id, groupId, item, price, description, image, features} = req.body;
 
   // const {id, name, image, bio, level} = req.body.stylist;
