@@ -7,16 +7,6 @@ const {findUser} = require('../db/queries/01_findUser');
 router.post('/', async(req, res) => {
 
   const info = req.body.info;
-  // console.log('🦊 info \n', info);
-
-  // 📍 Run this to create hashpass and save in DB.
-  /* const createHash = (pass) => {
-    const salt = bcrypt.genSaltSync(10);
-    const hashPassword = bcrypt.hashSync(pass, salt);
-    console.log(hashPassword);
-  }
-  createHash('admin01'); */
-
 
   findUser(info.username)
   .then(data => {

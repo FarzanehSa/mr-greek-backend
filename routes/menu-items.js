@@ -95,28 +95,6 @@ router.put("/", async(req, res) => {
   };
 });
 
-/* router.put("/", (req, res) => {
-
-  const noImg = 'https://res.cloudinary.com/demoshoebox/image/upload/v1695702421/Mr.Greek/important/no-image_byi9g0.jpg';
-  const {id, groupId, item, price, description, image, features} = req.body;
-
-  updateMenuItem(id, item, groupId, Math.trunc(price * 100), description, image || noImg)
-  .then(updated => {
-    getMenuItems()
-    .then(data => {
-      res.json({ newMenuItems: data });
-      return;
-    })
-  })
-  .catch(err => {
-    console.log(err.message);
-    res
-    .status(500)
-    .json({ error: err.message });
-  });
-}); */
-
-
 // Add new menu-item
 router.post("/", (req, res) => {
 

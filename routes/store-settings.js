@@ -29,7 +29,6 @@ router.get('/', (req, res) => {
 router.put("/", (req, res) => {
 
   const {storename, logo, address, tel} = req.body;
-  console.log(storename, logo, address, tel);
   const id = 1;
 
   updateStoreInfo(id, storename, logo, address, tel)
@@ -64,26 +63,6 @@ router.post("/", async(req, res) => {
   const slidesArr = updatedSlides.map(row => row.slide)
   res.json({ newSlides: slidesArr});
 
-  // deleteSlides()
-  // .then(r1 => {
-  //   console.log('r1', r1);
-  //   Promise.all(promiseArr)
-  //   .then(r2 => {
-  //     console.log('r2', r2);
-  //     getSlides()
-  //     .then(data => {
-  //       console.log(data);
-  //       // res.json({ newMenuItems: data });
-  //       return;
-  //     })
-  //   })
-  // })
-  // .catch(err => {
-  //   console.log(err.message);
-  //   res
-  //   .status(500)
-  //   .json({ error: err.message });
-  // });
 });
 
 module.exports = router;
