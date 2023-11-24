@@ -28,10 +28,10 @@ router.get('/', (req, res) => {
 
 router.put("/", (req, res) => {
 
-  const {storename, logo, address, tel} = req.body;
+  const {storename, logo, address, tel, about} = req.body;
   const id = 1;
 
-  updateStoreInfo(id, storename, logo, address, tel)
+  updateStoreInfo(id, storename, logo, address, tel, about)
   .then(updated => {
     getStoreInfo(id)
     .then(settings => {

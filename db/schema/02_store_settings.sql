@@ -6,5 +6,6 @@ CREATE TABLE store_settings (
   name VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
   logo VARCHAR(255) NOT NULL,
-  tel VARCHAR(255) NOT NULL
+  tel VARCHAR(255) NOT NULL,
+  about VARCHAR(16383) NOT NULL
 );
