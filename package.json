@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "db:reset": "node bin/resetdb.js",
+    "test:unit": "jest --testRegex \\.unit\\.test\\.js",
+    "test:int": "jest --testRegex \\.int\\.test\\.js",
+    "test": "jest",
     "start": "node server.js",
     "local": "./node_modules/.bin/nodemon -L --ignore public/"
   },
@@ -22,5 +24,8 @@
     "nodemon": "^3.0.1",
     "pg": "^8.11.3",
     "sass": "^1.67.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
